@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Site</title>
+    <script src="script.js">
+        
+    </script>
+    </script>
+</head>
+<body>
+    
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <script>
+        "use strict";
+        
+        function calculateSum() {
+            var num1 = parseFloat(prompt("Enter the first number"));
+            var num2 = parseFloat(prompt("Enter the second number"));
+            var sum = sumNumbers(num1, num2);
+            document.getElementById("result").textContent = "Result: " + sum;
+        }
+        "use strict";
+        
+        function evaluateExpression() {
+            var expression = prompt("Enter a math expression");
+            var result = eval(expression);
+            alert("You entered: " + expression + ", and the result is: " + result);
+        }
+        "use strict";
+        
+        function validateName() {
+            var name = "";
+            while (!name) {
+                name = prompt("Enter your name");
+            }
+            return name;
+        }
+        
+        function validateBirthYear() {
+            var birthYear = NaN;
+            while (isNaN(birthYear) || birthYear >= 2010) {
+                birthYear = parseInt(prompt("Enter your birth year"));
+            }
+            return birthYear;
+        }
+        function calculateAge() {
+            var name = validateName();
+            var birthYear = validateBirthYear();
+            var age = new Date().getFullYear() - birthYear;
+            
+            var result = "Name: " + name + "\nBirth year: " + birthYear + "\nAge: " + age;
+            document.getElementById("userInfo").textContent = result;
+        }
+    </script>
+    <div id="result"></div>
+    <br>
+    <br>
+    <br>
+    <button onclick="evaluateExpression()">Evaluate Expression</button>
+    <br>
+    <br>
+    <br>
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div id="userInfo"></div>
+</body>
+</html>

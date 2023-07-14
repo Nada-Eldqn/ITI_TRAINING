@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <script src="tot.js"></script>
+  <script>
+    function calculateResult() {
+      var num1 = parseInt(document.getElementById("number1").value);
+      var num2 = parseInt(document.getElementById("number2").value);
+      var operator = document.getElementById("operator").value;
+      
+      var result;
+      
+      switch (operator) {
+        case "+":
+          result = add(num1, num2);
+          break;
+        case "-":
+          result = subtract(num1, num2);
+          break;
+        case "*":
+          result = multiply(num1, num2);
+          break;
+        case "/":
+          result = divide(num1, num2);
+          break;
+        default:
+          result = "Invalid operator";
+      }
+      
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  </script>
+</head>
+<body>
+  
+  <label for="number1">Number 1:</label>
+  <input type="number" id="number1" onfocus="document.getElementById('result').innerHTML = '';">
+  <br>
+  <label for="number2">Number 2:</label>
+  <input type="number" id="number2" onfocus="document.getElementById('result').innerHTML = '';">
+  <br>
+  <label for="operator">Operator:</label>
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <br>
+  <button onclick="calculateResult()">Calculate</button>
+  <p id="result"></p>
+</body>
+</html>
